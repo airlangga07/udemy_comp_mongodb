@@ -1,0 +1,19 @@
+{
+  "name": "udemy_comp_mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airlangga07/udemy_comp_mongodb.git"
+  },
+  "author": "Mikael Airlangga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airlangga07/udemy_comp_mongodb/issues"
+  },
+  "homepage": "https://github.com/airlangga07/udemy_comp_mongodb#readme"
+}
