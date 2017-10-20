@@ -6,6 +6,15 @@
   <button>Click!</button>
 
   <script>
-    console.log('game is starting');
+    let counter = 0;
+
+    document.querySelector('button').addEventListener('click', () => {
+      ++counter;
+    });
+
+    setTimeout(() => {
+      if (counter > 5) alert("you won! Your clicks " + counter)
+      else alert("sorry, you're lost!")
+    }, 2000);
   </script>
 </body> 
