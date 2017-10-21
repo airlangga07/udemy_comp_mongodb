@@ -7,7 +7,7 @@ mongoose.connection
 
 
 beforeEach((done) => {
-  mongoose.connection.collections.users.drop(() => {
+    mongoose.connection.collections.users.drop(() => {
     // ready to run the next test
     done();
   });
