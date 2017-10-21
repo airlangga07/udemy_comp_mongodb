@@ -5,6 +5,8 @@ describe('Creating Records', () => {
   
     it('Saves a user', () => {
       const joe = new User({ name: 'Joe' });
+
+      joe.save();
     });
 
 });
