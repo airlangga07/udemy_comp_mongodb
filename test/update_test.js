@@ -9,7 +9,24 @@ describe('Updating a Record', () => {
     joe.save().then(() => done());
   });
 
-  it('model instance method set and save', (done) => {
+  function assertName(operation, done) {
+    operation
+      .then(() => User.find({}))
+      .then(users => {
+        assert(users.length === 1);
+        assert(users[0].name === 'Alex');
+        done();
+      });
+  }
 
+  it('model instance method set and save', (done) => {
+    joe.set('name', 'Alex');
+    assertName(joe.save(), done);
+       
   });
+
+  it('model instance method update', (done) => {
+    assertName(joe.update({ name: 'Alex' }), done);
+  });
+
 })
