@@ -9,7 +9,7 @@ describe('Deleting a User', () => {
     joe.save().then(() => done());
   });
 
-  it('model instance remove', (done) => {
+  it('model instance method remove', (done) => {
     joe.remove()
        .then(() => User.findOne({ name: 'Joe' }))
        .then(user => {
