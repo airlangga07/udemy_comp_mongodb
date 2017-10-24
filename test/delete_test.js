@@ -18,7 +18,7 @@ describe('Deleting a User', () => {
        })
   });
 
-  it('class method findAndRemove', (done) => {
+  it('class method find and remove', (done) => {
     // remove a bunch or records with some given criteria
     User.remove({ name: 'Joe' })
       .then(() => User.findOne({ name: 'Joe' }))
@@ -28,8 +28,22 @@ describe('Deleting a User', () => {
       });
   });
 
-  it('class method findByIdAndRemove', () => {
+  it('class method findOneAndRemove', (done) => {
+    User.findOneAndRemove({ name: 'Joe' })
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then(user => {
+        assert(user === null);
+        done();
+      });
+  });
 
+  it('class method findByIdAndRemove', (done) => {
+    User.findByIdAndRemove(joe._id)
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then(user => {
+        assert(user === null);
+        done();
+      });
   });
 
 });
