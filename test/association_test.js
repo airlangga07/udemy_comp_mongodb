@@ -4,6 +4,7 @@ const Comment = require('../src/comment');
 const BlogPost = require('../src/blogPost');
 
 describe('Associations', () => {
+
   let joe, blogPost, comment;
   
   beforeEach((done) => {
@@ -17,10 +18,17 @@ describe('Associations', () => {
     blogPost.comments.push(comment);
     // referencing the comment to user, one-to-one array, so we just initialize the object to prop
     comment.user = joe;
+
+    // ES6 Spec, takes an array of promises, and get a get one then() statement. 
+    Promise.all([joe.save(), blogPost.save(), comment.save()])
+      .then(() => done());
   });
 
-  it('', (done) => {
-
+  it('saves a relation between a user and a blogpost', (done) => {
+    User.findOne({ name: 'Joe' }).then(user => {
+      console.log(user);
+      done();
+    });
   });
 
 });
